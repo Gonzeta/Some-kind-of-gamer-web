@@ -38,43 +38,58 @@ nav ul li a {
     justify-content: center;
     margin-top: 20px;
     background-color: #1B263B;
-    padding: 20px;
+    padding: 100px;
     border-radius: 50px;
 }
 
-.carousel-button {
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
-    color: white; /* Color del icono */
+.carrusel button.prev{
+  position: center;
+  top: 10%;
+  transform: translateY(-160%);
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+  color: white; /* Color de la flecha */
+  border: none;
+  font-size: 2rem;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 30% 0% 0% 20%;
+  transition: background-color 0.3s;
+}
+.carrusel button.next {
+    position: center;
+    top: 10%;
+    transform: translateY(-160%);
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+    color: white; /* Color de la flecha */
     border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 2rem;
+    padding: 10px;
     cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
     z-index: 10;
-    transition: background 0.3s;
+    border-radius: 0% 30% 30% 0%;
+    transition: background-color 0.3s;
+  }
+
+.carrusel button.prev:hover,
+.carrusel button.next:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-.carousel-button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+.carrusel button.prev {
+  left: 10px;
 }
 
-.carousel-prev {
-    left: 10px;
+.carrusel button.next {
+  right: 10px;
 }
 
-.carousel-next {
-    right: 10px;
-}
 
 
 .contenedor-imagen {
     position: relative;
     text-align: center;
+    transform: translateY(-40%);
 }
 
 .contenedor-imagen img {
@@ -88,7 +103,7 @@ nav ul li a {
     position: absolute;
     right: 10px;    
     top: 120%;
-    transform: translateY(-20%);
+    transform: translateY(-28%);
     background-color: rgba(0, 0, 0, 0.2);
     padding: 10px;
     border-radius: 10px;
@@ -110,7 +125,9 @@ nav ul li a {
 
 .lista-gotys {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
     background: linear-gradient(to right, #1B263B, #0D1B2A);
     padding: 15px;
     border-radius: 10px;
@@ -118,21 +135,70 @@ nav ul li a {
 
 .goty-item {
     display: flex;
-    align-items: center;
-}
-
-.goty-item img {
-    width: 150px;
+    background-color: #1e2539;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    gap: 15px;
+    align-items: flex-start;
+  }
+  
+  .goty-item img {
+    width: 100px;
     height: 100px;
     object-fit: cover;
     border-radius: 10px;
-}
+  }
+  
+  .info-goty {
+    color: white;
+  }
+  
+  .info-goty h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #ffffff;
+  }
+  
+  .estrellas {
+    margin-top: 8px;
+    color: rgb(255, 244, 93);
+    font-size: 1rem;
+  }
 
-.info-goty {
-    margin-left: 10px;
-}
-
-.estrellas {
-    color: yellow;
-}
-
+ /* apartado para la segunda página */
+  .influential-game {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .background-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+  
+  .overlay {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
+    z-index: 1;
+  }
+  
+  .game-info {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 0% 20% 20% 0%;
+    max-width: 40%;
+  }
+  
+  
