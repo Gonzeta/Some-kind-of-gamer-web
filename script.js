@@ -25,3 +25,39 @@ function cambiarSlide(direccion) {
 
 // Cambio automático cada 3 segundos
 setInterval(() => cambiarSlide(1), 10000);
+
+
+
+const form = document.getElementById("contactForm");
+  const feedback = document.getElementById("formFeedback");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault(); // prevenimos envío real por mailto
+
+    const nombre = document.getElementById("nombre").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const mensaje = document.getElementById("mensaje").value.trim();
+
+    if (!nombre || !email || !mensaje) {
+      feedback.style.color = "orange";
+      feedback.textContent = "Por favor, completá todos los campos.";
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      feedback.style.color = "red";
+      feedback.textContent = "El correo electrónico no es válido.";
+      return;
+    }
+
+    // feedback positivo
+    feedback.style.color = "limegreen";
+    feedback.textContent = "¡Gracias por tu mensaje!";
+
+    form.reset(); // borra el contenido
+  });
+
+  function validateEmail(email) {
+    const re = /\S+@\S+\.\S+/;
+    return re.test(email);
+  }
