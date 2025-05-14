@@ -145,35 +145,54 @@ nav ul li a:hover {
 /*ACTUALIZACIONES */
 .actualizaciones {
   font-family: 'bebas-neue', monospace;
-  margin-top: 30px;
+  margin-top: 60px;
   padding: 20px;
   text-align: center;
 }
 
+#Act{
+  position: relative;
+  text-align: center;
+  font-family: 'bebas-neue', monospace;
+  background-color: linear-gradient( #1B263B, #1B263B);
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+
 .lista-actualizaciones {
   display: flex;
-  flex-direction: column;
   gap: 20px;
-  align-items: flex-start;
+  justify-content: space-between;
   padding: 15px;
   border-radius: 10px;
 }
 
 .actualizacion-item {
-  display: flex;
-  background: linear-gradient(to right, #1B263B, #0D1B2A);
-  border-radius: 10px;
-  padding: 15px;
-  box-shadow: 10px rgba(0,0,0,0.3);
-  gap: 15px;
-  align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #1B263B, #0D1B2A);
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 5px 0 rgba(0, 0, 0, 0.3);
+    gap: 15px;
+    align-items: center;
+    width: 180px;
+}
+.actualizacion-item:hover {
+  scale: 1.05;
+  transition: all 0.3s ease;
+  background: linear-gradient(to bottom, #1B263B, #0D1B2A);
+  box-shadow: 5px 0 rgba(0, 0, 0, 0.5);
 }
 
+
 .actualizacion-item img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
 .info-actualizacion {
@@ -218,7 +237,7 @@ nav ul li a:hover {
   }
   
   .goty-item img {
-    width: 100px;
+    width: 150px;
     height: 100px;
     object-fit: cover;
     border-radius: 10px;
